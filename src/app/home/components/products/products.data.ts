@@ -43,4 +43,25 @@ export const products: ProductListItem[] = [
     price: 20,
     ratings: 5
   },
+  {
+    id: 7,
+    product_name: 'Ear rings',
+    product_img: 'shop-7',
+    price: 10,
+    ratings: 4
+  },
+  {
+    id: 8,
+    product_name: 'Scarf',
+    product_img: 'shop-8',
+    price: 30,
+    ratings: 4
+  },
+  {
+    id: 9,
+    product_name: 'Boots',
+    product_img: 'shop-9',
+    price: 70,
+    ratings: 4
+  },
 ];
