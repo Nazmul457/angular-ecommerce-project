@@ -6,10 +6,12 @@ describe('SidenavigationComponent', () => {
   let component: SidenavigationComponent;
   let fixture: ComponentFixture<SidenavigationComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [SidenavigationComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ SidenavigationComponent ]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(SidenavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

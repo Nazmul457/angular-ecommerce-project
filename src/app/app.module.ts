@@ -7,16 +7,9 @@ import { HomeModule } from './home/home.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HomeModule
-  ],
+  declarations: [AppComponent, NotFoundComponent],
+  imports: [BrowserModule, HomeModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

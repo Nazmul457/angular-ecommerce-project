@@ -10,6 +10,6 @@ export class CategoryService {
   constructor() { }
 
   getAllCategories(): Category[] {
-    return categories;
+    return  categories;
   }
 }

@@ -6,10 +6,12 @@ describe('CatnavigationComponent', () => {
   let component: CatnavigationComponent;
   let fixture: ComponentFixture<CatnavigationComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CatnavigationComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CatnavigationComponent ]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(CatnavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
