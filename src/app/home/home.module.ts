@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
+import { ProductsComponent } from './components/products/products.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
     HomeComponent,
     HeaderComponent,
     CatnavigationComponent,
-    SidenavigationComponent
+    SidenavigationComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,
