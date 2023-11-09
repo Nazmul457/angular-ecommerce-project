@@ -4,6 +4,6 @@ export interface Product {
     product_img: string;
     price: number;
     ratings: number;
-    roduct_description: string;
+    product_description: string;
     category_id: number;
 }
