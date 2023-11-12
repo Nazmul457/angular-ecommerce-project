@@ -30,7 +30,7 @@ export class CartStoreItem extends StoreItem<Cart> {
                 ...this.cart.products,
                 {
                     product: product,
-                    amount: product.price,
+                    amount: Number(product.price),
                     quantity: 1,
                 },
             ];
@@ -39,5 +39,28 @@ export class CartStoreItem extends StoreItem<Cart> {
         }
         this.cart.totalAmout += Number(product.price);
         ++this.cart.totalProducts;
+    }
+
+    removeProduct(cartItem: CartItem): void {
+        this.cart.products = this.cart.products.filter(
+            (item) => item.product.id !== cartItem.product.id
+        );
+        this.cart.totalProducts -= cartItem.quantity;
+        this.cart.totalAmout -= cartItem.amount;
+    }
+
+    decreaseProductQuantity(cartItem: CartItem): void {
+        const cartProduct: CartItem | undefined = this.cart.products.find(
+            (cartProduct) => cartProduct.product.id === cartItem.product.id
+        );
+        if(cartProduct) {
+            if (cartProduct.quantity === 1) {
+                this.removeProduct(cartItem);
+            } else {
+                cartProduct.quantity--;
+                this.cart.totalAmout -= Number(cartItem.product.price);
+                --this.cart.totalProducts;
+            }
+        }
     }
 }
