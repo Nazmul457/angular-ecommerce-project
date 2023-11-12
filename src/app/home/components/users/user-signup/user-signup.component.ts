@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
-  AbstractControl,
   Validators,
 } from '@angular/forms';
-import { matchPasswords } from './validators/match-passwords.validators';
+import { matchPasswords } from './validators/match-passwords.validator';
 import { UserService } from '../../../services/users/user-service.service';
 import { user } from 'src/app/home/types/user.type';
 
@@ -17,7 +17,8 @@ import { user } from 'src/app/home/types/user.type';
 export class UserSignupComponent implements OnInit {
   userSignupForm: FormGroup;
   alertMessage: string = '';
-  alertType: number = 0; // 0-success, 1-waring 2-error
+  alertType: number = 0; // 0-success, 1-warning, 2-error
+
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -42,12 +43,15 @@ export class UserSignupComponent implements OnInit {
   get firstName(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('firstName');
   }
+
   get email(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('email');
   }
+
   get password(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('password');
   }
+
   get confirmPassword(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('confirmPassword');
   }
@@ -66,7 +70,7 @@ export class UserSignupComponent implements OnInit {
     this.userService.createUser(user).subscribe({
       next: (result) => {
         if (result.message === 'success') {
-          this.alertMessage = 'User created successfully.';
+          this.alertMessage = 'User created successfully';
           this.alertType = 0;
         } else if (result.message === 'Email already exists') {
           this.alertMessage = result.message;

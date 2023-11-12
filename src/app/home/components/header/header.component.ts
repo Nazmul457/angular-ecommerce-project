@@ -3,14 +3,14 @@ import {
   faSearch,
   faUserCircle,
   faShoppingCart,
-  faThumbTack,
 } from '@fortawesome/free-solid-svg-icons';
 import { CategoriesStoreItem } from '../../services/category/categories.storeItem';
 import { SearchKeyword } from '../../types/searchKeyword.type';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter, Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { CartStoreItem } from '../../services/cart/cart.storeItem';
 import { UserService } from '../../services/users/user-service.service';
+import { Subscription, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-header',

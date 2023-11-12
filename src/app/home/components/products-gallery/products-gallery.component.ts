@@ -4,7 +4,7 @@ import { ProductsStoreItem } from '../../services/product/products.storeItem';
 @Component({
   selector: 'app-products-gallery',
   templateUrl: './products-gallery.component.html',
-  styleUrls: ['./products-gallery.component.scss']
+  styleUrls: ['./products-gallery.component.scss'],
 })
 export class ProductsGalleryComponent {
   constructor(private productsStoreItem: ProductsStoreItem) {}

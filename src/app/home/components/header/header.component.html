@@ -1,7 +1,7 @@
 <div class="header bg-dark">
   <div class="row">
     <div class="brand my-1">
-      <h3>eShopping-Zone</h3>
+      <h1>eStore</h1>
     </div>
 
     <div class="p-0 my-4 w-50 h-25 bg-white">
@@ -20,8 +20,8 @@
           placeholder="Search..."
         />
         <button
-          class="search-button"
           (click)="onClickSearch(keyword.value, categoryOptions.value)"
+          class="search-button"
         >
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
@@ -62,8 +62,8 @@
             *ngIf="cart.totalProducts > 0"
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
           >
-            {{ cart.totalProducts }}</span
-          >
+            {{ cart.totalProducts }}
+          </span>
         </ng-container>
       </button>
     </div>

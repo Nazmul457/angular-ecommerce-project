@@ -20,5 +20,4 @@ export class ProductsComponent {
   addToCart(product: Product) {
     this.cart.addProduct(product);
   }
-
 }

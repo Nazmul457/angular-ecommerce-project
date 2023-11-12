@@ -10,7 +10,8 @@ import { filter } from 'rxjs';
   styleUrls: ['./catnavigation.component.scss'],
 })
 export class CatnavigationComponent {
-  @Output() categoryClicked: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  categoryClicked: EventEmitter<number> = new EventEmitter<number>();
 
   displayOptions: boolean = true;
 
@@ -21,8 +22,7 @@ export class CatnavigationComponent {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
-        this.displayOptions =
-          (event as NavigationEnd).url === '/home/products' ? true : false;
+        this.displayOptions = (event as NavigationEnd).url === '/home/products' ? true : false;
       });
   }
 

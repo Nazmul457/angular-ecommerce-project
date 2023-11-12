@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import {
   AbstractControl,
   FormBuilder,
@@ -7,7 +8,6 @@ import {
 } from '@angular/forms';
 import { UserService } from 'src/app/home/services/users/user-service.service';
 import { loginToken } from 'src/app/home/types/user.type';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-login',
@@ -45,7 +45,7 @@ export class UserLoginComponent implements OnInit {
       next: (result: loginToken) => {
         this.userService.activateToken(result);
         this.alertType = 0;
-        this.alertMessage = 'Login successfull';
+        this.alertMessage = 'Login successful';
         setTimeout(() => {
           this.location.back();
         }, 1000);
