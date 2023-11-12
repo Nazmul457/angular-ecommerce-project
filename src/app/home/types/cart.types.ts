@@ -8,6 +8,6 @@ export interface CartItem {
 
 export interface Cart {
     products: CartItem[];
-    totalAmout: number;
+    totalAmount: number;
     totalProducts: number;
 }
