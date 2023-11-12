@@ -14,7 +14,7 @@
         />
         <span
           class="text-danger"
-          *ngIf='firstName?.touched && firstName?.errors?.["required"]'
+          *ngIf="firstName?.touched && firstName?.errors?.['required']"
         >
           First Name is required
         </span>
@@ -75,13 +75,14 @@
       />
       <span
         class="text-danger"
-        *ngIf='email?.touched && email?.errors?.["required"]'
+        *ngIf="email?.touched && email?.errors?.['required']"
       >
         Email is required
       </span>
+
       <span
         class="text-danger"
-        *ngIf='email?.touched && email?.errors?.["email"]'
+        *ngIf="email?.touched && email?.errors?.['email']"
       >
         Enter valid email address
       </span>
@@ -96,7 +97,7 @@
       />
       <span
         class="text-danger"
-        *ngIf='password?.touched && password?.errors?.["required"]'
+        *ngIf="password?.touched && password?.errors?.['required']"
       >
         Password is required
       </span>
@@ -112,7 +113,7 @@
       />
       <span
         class="text-danger"
-        *ngIf='confirmPassword?.touched && confirmPassword?.errors?.["required"]'
+        *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']"
       >
         Confirm Password is required
       </span>
@@ -121,7 +122,7 @@
         class="text-danger"
         *ngIf="confirmPassword?.touched && userSignupForm.errors?.['passwordMismatch']"
       >
-        Passwords don't match
+        Passwords doesn't match
       </span>
     </div>
     <div class="text-center form-group-margin">
@@ -133,13 +134,12 @@
         Join
       </button>
     </div>
-
     <div
       class="alert"
       [ngClass]="
-        aletrType === 0
-          ? 'alert0success'
-          : aletrType === 1
+        alertType === 0
+          ? 'alert-success'
+          : alertType === 1
           ? 'alert-warning'
           : 'alert-danger'
       "

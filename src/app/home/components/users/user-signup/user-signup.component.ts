@@ -18,7 +18,7 @@ import { user } from 'src/app/home/types/user.type';
 export class UserSignupComponent implements OnInit {
   userSignupForm: FormGroup;
   alertMessage: string = '';
-  aletrType: number = 0; // 0-success, 1-waring 2-error
+  alertType: number = 0; // 0-success, 1-waring 2-error
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -68,15 +68,15 @@ export class UserSignupComponent implements OnInit {
       next: (result) => {
         if (result.message === 'success') {
           this.alertMessage = 'User created successfully.';
-          this.aletrType = 0;
+          this.alertType = 0;
         } else if (result.message === 'Email already exists') {
           this.alertMessage = result.message;
-          this.aletrType = 1;
+          this.alertType = 1;
         }
       },
       error: (error) => {
         this.alertMessage = error.message;
-        this.aletrType = 2;
+        this.alertType = 2;
       },
     });
   }
