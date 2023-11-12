@@ -6,14 +6,13 @@ import {
   Validators,
 } from '@angular/forms';
 import { matchPasswords } from './validators/match-passwords.validators';
-import { UserService } from '../services/user-service.service';
+import { UserService } from '../../../services/users/user-service.service';
 import { user } from 'src/app/home/types/user.type';
 
 @Component({
   selector: 'app-user-signup',
   templateUrl: './user-signup.component.html',
   styleUrls: ['./user-signup.component.scss'],
-  providers: [UserService],
 })
 export class UserSignupComponent implements OnInit {
   userSignupForm: FormGroup;

@@ -21,6 +21,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { UserSignupComponent } from './components/users/user-signup/user-signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
+import { UserService } from './services/users/user-service.service';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { UserLoginComponent } from './components/users/user-login/user-login.com
     CategoriesStoreItem,
     ProductsStoreItem,
     ProductsService,
-    CartStoreItem
+    CartStoreItem,
+    UserService
   ],
 })
 export class HomeModule {}
