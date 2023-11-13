@@ -22,6 +22,7 @@ import { UserSignupComponent } from './components/users/user-signup/user-signup.
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
 import { UserService } from './services/users/user-service.service';
+import { OrderService } from './services/order/order.service';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { UserService } from './services/users/user-service.service';
     ProductsStoreItem,
     ProductsService,
     CartStoreItem,
-    UserService
+    UserService,
+    OrderService
   ],
 })
 export class HomeModule {}
