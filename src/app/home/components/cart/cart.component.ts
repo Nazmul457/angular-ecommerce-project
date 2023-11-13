@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartStoreItem } from '../../services/cart/cart.storeItem';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { CartItem, DeliveryAddress } from '../../types/cart.types';
+import { CartItem, DeliveryAddress } from '../../types/cart.type';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/users/user-service.service';
@@ -15,8 +15,8 @@ import { OrderService } from '../../services/order/order.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit, OnDestroy {
-  orderForm: FormGroup;
   faTrash = faTrash;
+  orderForm: FormGroup;
   user: loggedInUser;
   subscriptions: Subscription = new Subscription();
   alertType: number = 0;
@@ -39,6 +39,7 @@ export class CartComponent implements OnInit, OnDestroy {
       pin: '',
       email: '',
     };
+
     this.subscriptions.add(
       userService.loggedInUser$.subscribe((loggedUser) => {
         if (loggedUser.firstName) {

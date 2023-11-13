@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
+  AbstractControl,
   Validators,
 } from '@angular/forms';
+
 import { matchPasswords } from './validators/match-passwords.validator';
+
 import { UserService } from '../../../services/users/user-service.service';
 import { user } from 'src/app/home/types/user.type';
 
@@ -64,13 +66,14 @@ export class UserSignupComponent implements OnInit {
       city: this.userSignupForm.get('city')?.value,
       state: this.userSignupForm.get('state')?.value,
       pin: this.userSignupForm.get('pin')?.value,
-      email: this.userSignupForm.get('email')?.value,
-      password: this.userSignupForm.get('password')?.value,
+      email: this.email?.value,
+      password: this.password?.value,
     };
+
     this.userService.createUser(user).subscribe({
       next: (result) => {
         if (result.message === 'success') {
-          this.alertMessage = 'User created successfully';
+          this.alertMessage = 'User created successfully.';
           this.alertType = 0;
         } else if (result.message === 'Email already exists') {
           this.alertMessage = result.message;

@@ -27,9 +27,7 @@
               *ngFor="let subCategory of getCategories(mainCategory.id)"
               class="sub-items"
             >
-              <a (click)="onSubCategoryClick(subCategory)">{{
-                subCategory.category
-              }}</a>
+              <a (click)="onSubCategoryClick(subCategory)">{{ subCategory.category }}</a>
             </li>
           </ul>
         </div>

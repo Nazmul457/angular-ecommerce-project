@@ -19,10 +19,11 @@ export class RatingsComponent {
   set score(val: number) {
     this._score = val > 5 ? 5 : val;
     const solidStarCount: number = Math.floor(this._score);
-    for(let i: number = 0;  i< solidStarCount; i++) {
+    for (let i: number = 0; i < solidStarCount; i++){
       this.stars.push(faStar);
     }
-    if(this._score - solidStarCount > 0 && this._score - solidStarCount < 1) {
+
+    if (this._score - solidStarCount > 0 && this._score - solidStarCount < 1) {
       this.stars.push(faStarHalfStroke);
     }
 

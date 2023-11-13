@@ -3,14 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { loginToken, user, loggedInUser } from 'src/app/home/types/user.type';
 
-
 @Injectable()
 export class UserService {
   private autoLogoutTimer: any;
   private authToken: string;
-  private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  private loggedInUserInfo: BehaviorSubject<loggedInUser> = new BehaviorSubject(<loggedInUser>{});
+  private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(
+    false
+  );
+
+  private loggedInUserInfo: BehaviorSubject<loggedInUser> = new BehaviorSubject(
+    <loggedInUser>{}
+  );
 
   constructor(private httpClient: HttpClient) {
     this.loadToken();
@@ -54,7 +58,7 @@ export class UserService {
     localStorage.setItem('city', token.user.city);
     localStorage.setItem('state', token.user.state);
     localStorage.setItem('pin', token.user.pin);
-    localStorage.setItem('email', token.user.email);
+    localStorage.setItem('email',token.user.email);
 
     this.isAuthenticated.next(true);
     this.loggedInUserInfo.next(token.user);
@@ -81,7 +85,8 @@ export class UserService {
     if (!token || !expiry) {
       return;
     } else {
-      const expiresIn: number = new Date(expiry).getTime() - new Date().getTime();
+      const expiresIn: number =
+        new Date(expiry).getTime() - new Date().getTime();
       if (expiresIn > 0) {
         const firstName: string | null = localStorage.getItem('firstName');
         const lastName: string | null = localStorage.getItem('lastName');
@@ -98,8 +103,8 @@ export class UserService {
           city: city !== null ? city : '',
           state: state !== null ? state : '',
           pin: pin !== null ? pin : '',
-          email: email !== null ? email : ''
-        }
+          email: email !== null ? email : '',
+        };
 
         this.isAuthenticated.next(true);
         this.loggedInUserInfo.next(user);

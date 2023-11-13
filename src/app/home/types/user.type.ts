@@ -27,5 +27,5 @@ export interface loggedInUser {
 export interface loginToken {
   token: string;
   expiresInSeconds: number;
-  user: loggedInUser
+  user: loggedInUser;
 }

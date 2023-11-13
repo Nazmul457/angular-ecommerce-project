@@ -2,6 +2,7 @@
   <div class="text-center">
     <h2>Become A Member</h2>
   </div>
+
   <form [formGroup]="userSignupForm" (ngSubmit)="onSubmit()">
     <div class="row form-group-margin">
       <div class="form-group col-md-6">
@@ -14,11 +15,12 @@
         />
         <span
           class="text-danger"
-          *ngIf="firstName?.touched && firstName?.errors?.['required']"
+          *ngIf='firstName?.touched && firstName?.errors?.["required"]'
         >
           First Name is required
         </span>
       </div>
+
       <div class="form-group col-md-6">
         <label for="lastName">Last Name</label>
         <input
@@ -30,7 +32,7 @@
       </div>
     </div>
 
-    <div class="form-group form-group-margin">
+    <div class="form-froup form-group-margin">
       <label for="address">Address</label>
       <input
         type="text"
@@ -40,7 +42,7 @@
       />
     </div>
 
-    <div class="form-group form-group-margin">
+    <div class="form-froup form-group-margin">
       <label for="city">City</label>
       <input
         type="text"
@@ -50,8 +52,8 @@
       />
     </div>
 
-    <div class="form-group form-group-margin">
-      <label for="address">State</label>
+    <div class="form-froup form-group-margin">
+      <label for="state">State</label>
       <input
         type="text"
         class="form-control"
@@ -60,12 +62,12 @@
       />
     </div>
 
-    <div class="form-group form-group-margin">
+    <div class="form-froup form-group-margin">
       <label for="pin">Pin / Zip code</label>
       <input type="text" class="form-control" id="pin" formControlName="pin" />
     </div>
 
-    <div class="form-group form-group-margin">
+    <div class="form-froup form-group-margin">
       <label for="email">Email*</label>
       <input
         type="text"
@@ -75,19 +77,19 @@
       />
       <span
         class="text-danger"
-        *ngIf="email?.touched && email?.errors?.['required']"
+        *ngIf='email?.touched && email?.errors?.["required"]'
       >
         Email is required
       </span>
-
       <span
         class="text-danger"
-        *ngIf="email?.touched && email?.errors?.['email']"
+        *ngIf='email?.touched && email?.errors?.["email"]'
       >
         Enter valid email address
       </span>
     </div>
-    <div class="form-group form-group-margin">
+
+    <div class="form-froup form-group-margin">
       <label for="password">Password*</label>
       <input
         type="password"
@@ -97,13 +99,13 @@
       />
       <span
         class="text-danger"
-        *ngIf="password?.touched && password?.errors?.['required']"
+        *ngIf='password?.touched && password?.errors?.["required"]'
       >
         Password is required
       </span>
     </div>
 
-    <div class="form-group form-group-margin">
+    <div class="form-froup form-group-margin">
       <label for="confirmPassword">Confirm Password*</label>
       <input
         type="password"
@@ -113,18 +115,19 @@
       />
       <span
         class="text-danger"
-        *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']"
+        *ngIf='confirmPassword?.touched && confirmPassword?.errors?.["required"]'
       >
         Confirm Password is required
       </span>
 
       <span
         class="text-danger"
-        *ngIf="confirmPassword?.touched && userSignupForm.errors?.['passwordMismatch']"
+        *ngIf='confirmPassword?.touched && userSignupForm.errors?.["passwordMismatch"]'
       >
         Passwords doesn't match
       </span>
     </div>
+
     <div class="text-center form-group-margin">
       <button
         type="submit"
@@ -134,6 +137,7 @@
         Join
       </button>
     </div>
+
     <div
       class="alert"
       [ngClass]="

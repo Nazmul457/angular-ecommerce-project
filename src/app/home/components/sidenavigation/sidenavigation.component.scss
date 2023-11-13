@@ -9,16 +9,14 @@
 
     .section-title {
         padding: 1em;
-
         h3 {
             text-align: center;
         }
     }
 
     .individual-category {
-
         ul {
-            padding: 0;
+            padding:0;
         }
 
         .sub-items {
@@ -26,12 +24,11 @@
             margin-bottom: 0.6em;
             list-style-type: none;
 
-            a {
+            a{
                 text-decoration: none;
                 color: black;
                 cursor: pointer;
                 @include underline-transition(0.5);
-                
             }
         }
     }

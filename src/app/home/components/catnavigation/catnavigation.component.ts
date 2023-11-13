@@ -22,7 +22,8 @@ export class CatnavigationComponent {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
-        this.displayOptions = (event as NavigationEnd).url === '/home/products' ? true : false;
+        this.displayOptions =
+          (event as NavigationEnd).url === '/home/products' ? true : false;
       });
   }
 

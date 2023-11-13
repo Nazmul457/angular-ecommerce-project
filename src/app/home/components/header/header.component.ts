@@ -7,10 +7,10 @@ import {
 import { CategoriesStoreItem } from '../../services/category/categories.storeItem';
 import { SearchKeyword } from '../../types/searchKeyword.type';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter } from 'rxjs';
 import { CartStoreItem } from '../../services/cart/cart.storeItem';
 import { UserService } from '../../services/users/user-service.service';
-import { Subscription, forkJoin } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -70,6 +70,10 @@ export class HeaderComponent implements OnDestroy {
 
   logout(): void {
     this.userService.logout();
+  }
+
+  pastOrders(): void {
+    this.router.navigate(['home/pastorders']);
   }
 
   ngOnDestroy(): void {

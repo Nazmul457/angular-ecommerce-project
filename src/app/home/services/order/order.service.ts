@@ -3,15 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CartStoreItem } from '../cart/cart.storeItem';
 import { Order, OrderItem } from '../../types/order.type';
-import { DeliveryAddress } from '../../types/cart.types';
+import { DeliveryAddress } from '../../types/cart.type';
 import { UserService } from '../users/user-service.service';
+import { PastOrder, PastOrderProduct } from '../../types/order.type';
 
 @Injectable()
 export class OrderService {
   constructor(
     private httpClient: HttpClient,
     private cartStore: CartStoreItem,
-    private userService: UserService
+    private userservice: UserService
   ) {}
 
   saveOrder(
@@ -41,7 +42,23 @@ export class OrderService {
       orderDetails: orderDetails,
     };
     return this.httpClient.post(url, order, {
-      headers: { authorization: this.userService.token },
+      headers: { authorization: this.userservice.token },
+    });
+  }
+
+  getOrders(userEmail: string): Observable<PastOrder[]> {
+    const url: string = `http://localhost:5001/orders/allorders?userEmail=${userEmail}`;
+
+    return this.httpClient.get<PastOrder[]>(url, {
+      headers: { authorization: this.userservice.token },
+    });
+  }
+
+  getOrderProducts(orderId: string): Observable<PastOrderProduct[]> {
+    const url: string = `http://localhost:5001/orders/orderproducts?orderId=${orderId}`;
+
+    return this.httpClient.get<PastOrderProduct[]>(url, {
+      headers: { authorization: this.userservice.token },
     });
   }
 }
