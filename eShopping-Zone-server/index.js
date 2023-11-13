@@ -14,7 +14,8 @@ app.use('/productCategories', productCategories);
 app.use('/products', products);
 app.use('/users', users);
 app.use('/orders', orders);
+app.use(express.static("e-shopping-zone"));
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(PORT, () => {
   console.log('App is running on the port - 5001');
 });
