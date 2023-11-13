@@ -15,6 +15,6 @@ app.use('/products', products);
 app.use('/users', users);
 app.use('/orders', orders);
 
-const server = app.listen(PORT, () => {
+const server = app.listen(process.env.PORT, () => {
   console.log('App is running on the port - 5001');
 });
